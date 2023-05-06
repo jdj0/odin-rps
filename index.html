@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+
         const options = ['rock', 'paper', 'scissors']
 
         function getComputerChoice(){
@@ -16,7 +17,33 @@
         }
 
         const computerChoice = getComputerChoice();
-        const playerChoice = getComputerChoice();
+
+        function playGame(computerChoice, playerChoice){
+            playerChoice = prompt("Please enter enter rock, paper or scrissors:").toLowerCase();
+            console.log("Your choice: " + playerChoice);
+            console.log("Computer says: " + computerChoice);
+            if (playerChoice == computerChoice){
+                return "It's a draw. Sad."
+            } else if (playerChoice == "rock" && computerChoice == "paper"){
+                return "You win! Rock beats Paper!"
+            } else if (playerChoice == "rock" && computerChoice == "scissors"){
+                return "You win! Rock beats scissors."
+            } else if (playerChoice == "paper" && computerChoice == "scissors"){
+                return "You lose. Scissors beats paper"
+            } else if (playerChoice == "paper" && computerChoice == "rock"){
+                return "Winner winner chicken dinner! Paper beats rock."
+            } else if (playerChoice == "scissors" && computerChoice == "rock"){
+                return "Loser. Rock beats scissors"
+            } else if (playerChoice == "scissors" && computerChoice == "paper"){
+                return "You won. Nice and slicey!"
+            } else {
+                return "You doughnut. You have to choose rock, paper or scissors."
+            };
+        }
+
+        console.log(playGame(computerChoice));
+            
+
     </script>
 </body>
 </html>
