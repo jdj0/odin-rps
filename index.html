@@ -10,13 +10,13 @@
     <script>
 
         const options = ['rock', 'paper', 'scissors']
+        let playerScore = 0;
+        let computerScore = 0;
 
         function getComputerChoice(){
             let random = Math.floor(Math.random() * options.length)
             return options[random]
         }
-
-        const computerChoice = getComputerChoice();
 
         function playGame(computerChoice, playerChoice){
             playerChoice = prompt("Please enter enter rock, paper or scrissors:").toLowerCase();
@@ -25,24 +25,44 @@
             if (playerChoice == computerChoice){
                 return "It's a draw. Sad."
             } else if (playerChoice == "rock" && computerChoice == "paper"){
-                return "You win! Rock beats Paper!"
+                computerScore ++;
+                return "You lose! Paper beats Rock!"
             } else if (playerChoice == "rock" && computerChoice == "scissors"){
+                playerScore ++;
                 return "You win! Rock beats scissors."
             } else if (playerChoice == "paper" && computerChoice == "scissors"){
+                computerScore ++;
                 return "You lose. Scissors beats paper"
             } else if (playerChoice == "paper" && computerChoice == "rock"){
+                playerScore ++;
                 return "Winner winner chicken dinner! Paper beats rock."
             } else if (playerChoice == "scissors" && computerChoice == "rock"){
+                computerScore ++;
                 return "Loser. Rock beats scissors"
             } else if (playerChoice == "scissors" && computerChoice == "paper"){
+                playerScore ++;
                 return "You won. Nice and slicey!"
             } else {
                 return "You doughnut. You have to choose rock, paper or scissors."
             };
         }
 
-        console.log(playGame(computerChoice));
-            
+        function game(){
+            while (playerScore < 5 && computerScore < 5){
+                console.log("Your score: " + playerScore);
+                console.log("Computer score: " + computerScore);
+                const computerChoice = getComputerChoice();
+                console.log(playGame(computerChoice));
+                }
+
+                if (playerScore == 5){
+                    return console.log("YEEEEES! You win!")
+                } else {
+                    return console.log("SUCKKKKA! You lose.")
+                }
+        }
+
+        game();
 
     </script>
 </body>
