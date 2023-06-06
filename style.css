@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    padding-top: 50px;
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    border-radius: 5%;
+    padding: 25px;
+    border: 5px solid gray;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#result {
+    text-align: center;
+    color: red;
+}

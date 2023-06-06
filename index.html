@@ -4,66 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <script>
 
-        const options = ['rock', 'paper', 'scissors']
-        let playerScore = 0;
-        let computerScore = 0;
+    <h1>Choose Your Weapon</h1>
 
-        function getComputerChoice(){
-            let random = Math.floor(Math.random() * options.length)
-            return options[random]
-        }
+    <div class="container">
+        <div class="card" id="rock">
+            <img src="static/rock.png">
+        </div>
+        <div class="card" id="paper">
+            <img src="static/paper.png">
+        </div>
+        <div class="card" id="scissors">
+            <img src="static/scissors.png">
+        </div>
+    </div>
 
-        function playGame(computerChoice, playerChoice){
-            playerChoice = prompt("Please enter enter rock, paper or scrissors:").toLowerCase();
-            console.log("Your choice: " + playerChoice);
-            console.log("Computer says: " + computerChoice);
-            if (playerChoice == computerChoice){
-                return "It's a draw. Sad."
-            } else if (playerChoice == "rock" && computerChoice == "paper"){
-                computerScore ++;
-                return "You lose! Paper beats Rock!"
-            } else if (playerChoice == "rock" && computerChoice == "scissors"){
-                playerScore ++;
-                return "You win! Rock beats scissors."
-            } else if (playerChoice == "paper" && computerChoice == "scissors"){
-                computerScore ++;
-                return "You lose. Scissors beats paper"
-            } else if (playerChoice == "paper" && computerChoice == "rock"){
-                playerScore ++;
-                return "Winner winner chicken dinner! Paper beats rock."
-            } else if (playerChoice == "scissors" && computerChoice == "rock"){
-                computerScore ++;
-                return "Loser. Rock beats scissors"
-            } else if (playerChoice == "scissors" && computerChoice == "paper"){
-                playerScore ++;
-                return "You won. Nice and slicey!"
-            } else {
-                return "You doughnut. You have to choose rock, paper or scissors."
-            };
-        }
+    <h1>The Battle</h1>
 
-        function game(){
-            while (playerScore < 5 && computerScore < 5){
-                console.log("Your score: " + playerScore);
-                console.log("Computer score: " + computerScore);
-                const computerChoice = getComputerChoice();
-                console.log(playGame(computerChoice));
-                }
+    <div class="container">
+        <div class="card-section">
+            <h2 class="card-title">Player Choice</h2>
+            <div class="card" id="pChoice">
+                <!-- js inserts image here -->
+            </div>
+        </div>
+        <div class="card-section">
+            <h2 class="card-title">Computer Choice</h2>
+            <div class="card" id="cChoice">
+                <!-- js inserts image here -->
+            </div>
+        </div>
+    </div>
 
-                if (playerScore == 5){
-                    return console.log("YEEEEES! You win!")
-                } else {
-                    return console.log("SUCKKKKA! You lose.")
-                }
-        }
+    <h1>The Result</h1>
+    <div id="result"></div>
 
-        game();
 
-    </script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
